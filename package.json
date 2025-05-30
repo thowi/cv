@@ -1,0 +1,25 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "watch": {
+    "pdf": {
+      "patterns": [
+        "."
+      ],
+      "extensions": "css,html",
+      "delay": 2000
+    }
+  },
+  "scripts": {
+    "watch": "npm-watch",
+    "pdf": "prince cv.html"
+  },
+  "author": "Thomas Wittek",
+  "devDependencies": {
+    "npm-watch": "^0.13.0"
+  },
+  "dependencies": {
+    "minireset.css": "^0.0.7"
+  }
+}
