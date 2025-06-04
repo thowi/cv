@@ -45,15 +45,10 @@
   line-height: 1.2;
 }
 
-main {
-  position: relative;
-}
-
 h1 {
   font-size: 18pt;
   font-weight: bold;
   margin-bottom: 2pt;
-  display: flex;
 }
 
 h2 {
@@ -88,41 +83,81 @@ p {
   margin-bottom: 4pt;
 }
 
-.contact {
-  margin-bottom: 8pt;
+header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 12pt;
 }
 
-.contact > a {
-  margin-right: 4pt;
-}
-
-.material-symbols-outlined {
-  font-size: 12pt;
-  margin-right: 2pt;
-  vertical-align: middle;
-}
-
-.icon-linkedin {
-  background-color: var(--accent);
-  display: inline-block;
-  height: 12pt;
-  margin-right: 2pt;
-  mask: url(linkedin_in.svg) no-repeat center / contain;
-  vertical-align: text-bottom;
-  width: 12pt;
-}
-
-.portrait {
+header img.portrait {
   border-radius: 50%;
   object-fit: cover;
   float: right;
   width: 64pt;
 }
 
+header .title {
+  flex: 1;
+  margin: 0 12pt;
+}
+
+header .title h1 {
+  font-size: 24pt;
+}
+
+header .first-name {
+  font-weight: normal;
+}
+
+header h2 {
+  border: none;
+  color: var(--light);
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 4pt;
+  margin-top: 0;
+}
+
+header .contact li {
+  text-align: right;
+}
+
+header .contact .icon {
+  margin-left: 6pt;
+}
+
+.material-symbols-outlined {
+  font-size: 12pt;
+  vertical-align: middle;
+}    
+
+.icon-linkedin {
+  background-color: var(--accent);
+  display: inline-block;
+  height: 12pt;
+  mask: url(linkedin_in.svg) no-repeat center / contain;
+  vertical-align: text-bottom;
+  width: 12pt;
+}    
+
+main {
+  position: relative;
+}
+
 .recent {
   align-items: baseline;
   display: flex;
-}
+}  
+
+.position {
+  align-items: baseline;
+  display: flex;
+  font-weight: normal;
+}  
+
+.position .role {
+  font-weight: bold;
+}  
 
 .organization {
   color: var(--accent);
@@ -138,25 +173,6 @@ p {
   content: ', ';
 }  
 
-.position {
-  align-items: baseline;
-  display: flex;
-  font-weight: normal;
-}  
-
-header h2 {
-  border: none;
-  color: var(--light);
-  font-size: 12pt;
-  font-weight: normal;
-  margin-bottom: 4pt;
-  margin-top: 0;
-}  
-
-.position .role {
-  font-weight: bold;
-}  
-
 .date {
   color: var(--light);
   flex: 1;
@@ -165,7 +181,7 @@ header h2 {
   text-align: right;
 }
 
-li {
+main li {
   list-style-type: none; 
   margin-bottom: 2pt;
   margin-top: 2pt;
@@ -173,19 +189,19 @@ li {
   position: relative;
 }
 
-a,
-a:visited {
-  color: var(--accent);
-}
-
 /* Custom bullet. */
-li::before {
+main li::before {
   color: var(--accent);
   content: '•';
   content: '>';
   position: absolute;
   left: 0pt;
   font-size: 10pt;
+}
+
+a,
+a:visited {
+  color: var(--accent);
 }
 
 /* Prevent page breaks just after headings and related elements. */
@@ -242,8 +258,10 @@ p {
     padding: 32px;
   }
 
+  header,
   main {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 643px;
   }
 }
