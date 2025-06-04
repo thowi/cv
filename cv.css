@@ -14,7 +14,8 @@
   --type-dark: #000;
   color: var(--type-dark);
   font-family: 'Lato', Helvetica, sans-serif;
-  font-size: 9pt;
+  /* Lato is relatively large. Use a slightly smaller size to compensate. */
+  font-size: 9.5pt;
   line-height: 1.3;
 }
 
