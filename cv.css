@@ -1,4 +1,6 @@
 @import './node_modules/minireset.css/minireset.css';
+/* Docs: https://developers.google.com/fonts/docs/material_symbols */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,350,1,200&icon_names=alternate_email,call,public';
 
 /* From https://fonts.googleapis.com/css?family=Calibri:400,700,400italic,700italic */
 @font-face {
@@ -90,6 +92,26 @@ p {
   margin-bottom: 8pt;
 }
 
+.contact > a {
+  margin-right: 4pt;
+}
+
+.material-symbols-outlined {
+  font-size: 12pt;
+  margin-right: 2pt;
+  vertical-align: middle;
+}
+
+.icon-linkedin {
+  background-color: var(--accent);
+  display: inline-block;
+  height: 12pt;
+  margin-right: 2pt;
+  mask: url(linkedin_in.svg) no-repeat center / contain;
+  vertical-align: text-bottom;
+  width: 12pt;
+}
+
 .portrait {
   border-radius: 50%;
   object-fit: cover;
@@ -144,16 +166,11 @@ header h2 {
 }
 
 li {
-  /* list-style-type: none; */
+  list-style-type: none; 
   margin-bottom: 2pt;
   margin-top: 2pt;
   padding-left: 12pt;
   position: relative;
-
-
-  list-style-type: disc;
-  margin-left: 13pt;
-  padding-left: 2pt;
 }
 
 a,
@@ -162,12 +179,14 @@ a:visited {
 }
 
 /* Custom bullet. */
-/* li::before {
+li::before {
+  color: var(--accent);
   content: '•';
+  content: '>';
   position: absolute;
-  left: 2pt;
+  left: 0pt;
   font-size: 10pt;
-} */
+}
 
 /* Prevent page breaks just after headings and related elements. */
 h1,
