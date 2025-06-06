@@ -16,6 +16,8 @@ As you'll get CORS errors when referencing local files from CSS, you actually ne
 npm run dev
 ```
 
+Then open http://localhost:8000/cv.html.
+
 # Export to PDF
 
 Since late 2024, modern browsers have great CSS Paged Media support. You can just use the print preview and save as PDF. In the print dialog, make sure to disable headers/footers, and enable background graphics.
