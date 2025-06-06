@@ -61,24 +61,44 @@ header {
   align-items: center;
   display: flex;
   margin-bottom: 12pt;
+  position: relative;
 }
 
-header .portrait .frame {
+header.bubble img.portrait {
+  object-fit: cover;
+  transform: scale(1.2) translateX(1pt);
+}
+
+header.bubble img.portrait {
+  width: 64pt;
+}
+
+header.bubble .clip {
   border-radius: 50%;
   height: 64pt;
   overflow: hidden;
   width: 64pt;
 }
 
-header img.portrait {
-  object-fit: cover;
-  transform: scale(1.2) translateX(1pt);
-  width: 64pt;
+header.polaroid {
+  margin-bottom: 40pt;
+  padding-left: 100pt;
+}
+
+header.polaroid img {
+  left: -20pt;
+  position: absolute;
+  top: -45pt;
+  width: 120pt;
 }
 
 header .title {
   flex: 1;
   margin: 0 12pt;
+}
+
+header.polaroid .title {
+  text-align: center;
 }
 
 header .title h1 {
@@ -109,7 +129,7 @@ header .contact .icon {
 .material-symbols-outlined {
   font-size: 12pt;
   vertical-align: middle;
-}    
+}
 
 .icon-linkedin {
   background-color: var(--accent);
@@ -118,7 +138,7 @@ header .contact .icon {
   mask: url(linkedin_in.svg) no-repeat center / contain;
   vertical-align: text-bottom;
   width: 12pt;
-}    
+}
 
 main {
   position: relative;
@@ -127,17 +147,17 @@ main {
 .recent {
   align-items: baseline;
   display: flex;
-}  
+}
 
 .position {
   align-items: baseline;
   display: flex;
   font-weight: normal;
-}  
+}
 
 .position .role {
   font-weight: bold;
-}  
+}
 
 .organization {
   color: var(--accent);
@@ -147,11 +167,11 @@ main {
 
 .location {
   color: var(--accent);
-}  
+}
 
 .location::before {
   content: ', ';
-}  
+}
 
 .date {
   color: var(--light);
@@ -162,7 +182,7 @@ main {
 }
 
 main li {
-  list-style-type: none; 
+  list-style-type: none;
   margin-bottom: 2pt;
   margin-top: 2pt;
   padding-left: 12pt;
@@ -210,7 +230,7 @@ p {
   @page {
     margin: 1.5cm 2cm 2cm 2cm;
     size: A4 portrait;
-    
+
     @bottom-right-corner {
       border-top: var(--hairline) solid var(--accent);
       margin-top: 50%;
@@ -230,6 +250,17 @@ p {
       content: 'Thomas Wittek';
       font-weight: bold;
     }
+  }
+
+  @page:first {
+    background: url('portrait_polaroid.svg') no-repeat;
+    background-position-x: calc(50% - 200pt);
+    background-position-y: -65pt;
+    background-size: 28%;
+  }
+
+  header.polaroid img {
+    display: none;
   }
 }
 
