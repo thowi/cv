@@ -196,6 +196,10 @@ main {
   text-align: right;
 }
 
+.skills-secondary {
+  display: none;
+}
+
 main li {
   list-style-type: none;
   margin-bottom: 2pt;
