@@ -271,12 +271,12 @@ p {
   }
 
   /* Only required in Polaroid mode for full-bleed print header. */
-  /* @page:first {
+  @page:first {
     background: url('portrait_polaroid.svg') no-repeat;
     background-position-x: calc(50% - 200pt);
     background-position-y: -65pt;
     background-size: 28%;
-  } */
+  }
 
   header.polaroid img {
     display: none;
