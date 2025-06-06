@@ -61,58 +61,6 @@ header {
   position: relative;
 }
 
-header.bubble .frame {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 64pt;
-}
-
-header.bubble img.portrait.bubble {
-  object-fit: cover;
-  transform: scale(1.2) translateX(1pt);
-  width: 100%;
-}
-
-header.bubble img.portrait.polaroid {
-  display: none;
-}
-
-header.bubble .clip {
-  border-radius: 50%;
-  height: 64pt;
-  overflow: hidden;
-  width: 64pt;
-}
-
-header.polaroid {
-  margin-bottom: 40pt;
-  padding-left: 100pt;
-}
-
-header.polaroid img.portrait.polaroid {
-  left: -20pt;
-  position: absolute;
-  top: -45pt;
-  width: 120pt;
-}
-
-header.polaroid .frame {
-  display: none;
-}
-
-header.polaroid .title {
-  margin-left: 16pt;
-  text-align: center;
-}
-
-header.no-photo .portrait {
-  display: none;
-}
-
-header.no-photo .title {
-  margin-left: 0;
-}
-
 header .title {
   flex: 1;
   margin: 0 16pt;
@@ -268,18 +216,6 @@ p {
       padding-right: 10pt;
       content: 'Thomas Wittek';
     }
-  }
-
-  /* Only required in Polaroid mode for full-bleed print header. */
-  @page:first {
-    background: url('portrait_polaroid.svg') no-repeat;
-    background-position-x: calc(50% - 200pt);
-    background-position-y: -65pt;
-    background-size: 28%;
-  }
-
-  header.polaroid img {
-    display: none;
   }
 }
 

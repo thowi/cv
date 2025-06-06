@@ -1,0 +1,7 @@
+body.no-photo header .portrait {
+  display: none;
+}
+
+body.no-photo header .title {
+  margin-left: 0;
+}
