@@ -259,11 +259,10 @@ p {
       content: counter(page);
     }
 
-    @bottom {
+    @bottom-center {
       text-align: right;
       padding-right: 10pt;
       content: 'Thomas Wittek';
-      font-weight: bold;
     }
   }
 
