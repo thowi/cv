@@ -5,13 +5,13 @@
  */
 @import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,350,1,200&icon_names=alternate_email,call,location_on,public';
 /* Import font. */
-@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
 
 :root {
   --accent: hsl(200 100 33);
   --light: #777;
   --hairline: 0.5pt;
-  --type-dark: #000;
+  --type-dark: #2c2c2c;
   color: var(--type-dark);
   font-family: 'Lato', Helvetica, sans-serif;
   /* Lato is relatively large. Use a slightly smaller size to compensate. */
@@ -28,21 +28,18 @@ h1 {
 h2 {
   border-bottom: var(--hairline) solid var(--accent);
   font-size: 14pt;
-  font-weight: bold;
   margin-bottom: 8pt;
   margin-top: 12pt;
 }
 
 h3 {
   font-size: 12pt;
-  font-weight: bold;
   margin-bottom: 2pt;
   margin-top: 10pt;
 }
 
 h4 {
   font-size: 11pt;
-  font-weight: bold;
   margin-bottom: 2pt;
   margin-top: 8pt;
 }
@@ -64,13 +61,20 @@ header {
   position: relative;
 }
 
-header.bubble img.portrait {
-  object-fit: cover;
-  transform: scale(1.2) translateX(1pt);
+header.bubble .frame {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 64pt;
 }
 
-header.bubble img.portrait {
-  width: 64pt;
+header.bubble img.portrait.bubble {
+  object-fit: cover;
+  transform: scale(1.2) translateX(1pt);
+  width: 100%;
+}
+
+header.bubble img.portrait.polaroid {
+  display: none;
 }
 
 header.bubble .clip {
@@ -85,20 +89,33 @@ header.polaroid {
   padding-left: 100pt;
 }
 
-header.polaroid img {
+header.polaroid img.portrait.polaroid {
   left: -20pt;
   position: absolute;
   top: -45pt;
   width: 120pt;
 }
 
-header .title {
-  flex: 1;
-  margin: 0 12pt;
+header.polaroid .frame {
+  display: none;
 }
 
 header.polaroid .title {
+  margin-left: 16pt;
   text-align: center;
+}
+
+header.no-photo .portrait {
+  display: none;
+}
+
+header.no-photo .title {
+  margin-left: 0;
+}
+
+header .title {
+  flex: 1;
+  margin: 0 16pt;
 }
 
 header .title h1 {
@@ -107,6 +124,10 @@ header .title h1 {
 
 header .first-name {
   font-weight: 300;
+}
+
+header .last-name {
+  font-weight: bold;
 }
 
 header h2 {
@@ -152,11 +173,6 @@ main {
 .position {
   align-items: baseline;
   display: flex;
-  font-weight: normal;
-}
-
-.position .role {
-  font-weight: bold;
 }
 
 .organization {
@@ -177,7 +193,6 @@ main {
   color: var(--light);
   flex: 1;
   font-size: 10pt;
-  font-weight: normal;
   text-align: right;
 }
 
@@ -252,12 +267,13 @@ p {
     }
   }
 
-  @page:first {
+  /* Only required in Polaroid mode for full-bleed print header. */
+  /* @page:first {
     background: url('portrait_polaroid.svg') no-repeat;
     background-position-x: calc(50% - 200pt);
     background-position-y: -65pt;
     background-size: 28%;
-  }
+  } */
 
   header.polaroid img {
     display: none;
