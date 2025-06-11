@@ -5,7 +5,7 @@ class VariantSwitcher {
 
   constructor() {
     document
-        .querySelector('body')
+        .querySelector('header')
         .addEventListener('click', e => this.#cycleVariant());
 
     this.#styleEl = document.createElement('link');
