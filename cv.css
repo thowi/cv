@@ -8,7 +8,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
 
 :root {
-  --accent: hsl(200 100 33);
+  --accent: #0070a8;
   --light: #777;
   --hairline: 0.5pt;
   --type-dark: #2c2c2c;
@@ -111,11 +111,6 @@ header .contact .icon {
 
 main {
   position: relative;
-}
-
-.recent {
-  align-items: baseline;
-  display: flex;
 }
 
 .position {
