@@ -4,19 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="cv.css">
-  <script src="cv.js" defer></script>
+  <link rel="stylesheet" href="cv_{{ variant | replace('[^\\w]', '_', 'g') }}.css">
   <title>Thomas Wittek – Senior Software Engineer, Tech Lead, Manager</title>
 </head>
 
-<body>
+<body class="{{ variant | replace('[^\\w]', '-', 'g') }}">
 
   <header>
-    <div class="portrait">
-      <img class="portrait polaroid" src="portrait_polaroid.svg" alt="Profile photo">
-      <div class="frame">
-        <img class="portrait bubble" src="portrait.jpg" alt="Profile photo">
+    {% if variant != 'no-photo' %}
+      <div class="portrait">
+        {% if variant == 'polaroid' %}
+          <img class="portrait polaroid" src="portrait_polaroid.svg" alt="Profile photo">
+        {% elif variant == 'bubble' %}
+          <div class="frame">
+            <img class="portrait bubble" src="portrait.jpg" alt="Profile photo">
+          </div>
+        {% endif %}
       </div>
-    </div>
+    {% endif %}
     <div class="title">
       <h1><span class="first-name">Thomas</span> <span class="last-name">Wittek</span></h1>
       <h2>Software Engineer, Tech Lead, Manager</h2>
