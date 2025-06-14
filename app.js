@@ -19,8 +19,12 @@ app.use(express.static(path.join(__dirname, 'static')));
 // Routes.
 app.get('/cv', (req, res) => {
   res.render('cv', {
-    isVariantPolaroid: true,
-    variant: 'polaroid'
+    summary: req.query.summary,
+    variant: req.query.variant ?? 'polaroid',
+    showPrimarySkillsInExp: req.query.showPrimarySkillsInExp || false,
+    showSecondarySkillsInExp: req.query.showSecondarySkillsInExp || false,
+    showCommunitySection: req.query.showCommunitySection || false,
+    showPersonalSection: req.query.showPersonalSection || false,
   });
 });
 

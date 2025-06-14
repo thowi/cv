@@ -36,7 +36,7 @@
 
   <main>
     <section>
-      <p>Passionate Software Engineer with a strong focus on product impact, quality, and team effectiveness. Proven track record of leading ambitious full-stack projects at scale, driving launches on major user-facing platforms, and managing high-performing teams.</p>
+      <p>{{ summary or 'Passionate Software Engineer with a strong focus on product impact, quality, and team effectiveness. Proven track record of leading ambitious full-stack projects at scale, driving launches on major user-facing platforms, and managing high-performing teams.' }}</p>
     </section>
 
     <section>
@@ -79,7 +79,9 @@
           <li>Created growth analysis, 2 year+ roadmaps, quarterly prioritized work plans.</li>
           <li>Collaborated with PM, UX, and sister teams. Tracked work and reported to senior leadership.</li>
           <li>Managed, grew, and coached team of 4.</li>
-          <li class="skills-primary">Skills: Java, JavaScript, TypeScript, C++, HTML, CSS, SQL, Machine Learning, Experiment Analysis, Agile.</li>
+          {% if showPrimarySkillsInExp %}
+            <li>Skills: Java, JavaScript, TypeScript, C++, HTML, CSS, SQL, Machine Learning, Experiment Analysis, Agile.</li>
+          {% endif %}
         </ul>
       </article>
 
@@ -97,7 +99,9 @@
           <li>Designed and implemented major projects in <strong>Google Trips</strong> app (millions of installs) including extended search, dependency injection (Dagger), data layer abstraction, i18n, app sunset.</li>
           <li>Led, designed, and implemented redesign of the <strong>YouTube Android</strong> TV casting UI for millions of daily users. Greatly improved reliability through deep analysis, >13kLOC refactorings, numerous bug fixes. Designed and implemented critical parts of YouTube Android in-app video editing UI.</li>
           <li>Architected <strong>Calendar</strong> Desktop UI. Led team of 8 as <strong>Tech Lead</strong>, established processes, guidelines, community, roadmaps, Agile cycles, retrospectives. Implemented app skeleton, drag'n'drop, infrastructure, latency.</li>
-          <li class="skills-primary">Skills: Java, JavaScript, TypeScript, HTML, CSS, Android, Python, WebDriver, Experiment Analysis, Agile.</li>
+          {% if showPrimarySkillsInExp %}
+            <li>Skills: Java, JavaScript, TypeScript, HTML, CSS, Android, Python, WebDriver, Experiment Analysis, Agile.</li>
+          {% endif %}
         </ul>
       </article>
 
@@ -113,7 +117,9 @@
         <ul>
           <li>Led UI architecture of new <strong>Tasks</strong> Desktop UI (3 engineers). Implemented most of UI, achieved 94% test coverage.</li>
           <li>Promoted to SWE III (L4) in Nov 2010, to Senior SWE (L5) in Dec 2013, based on technical impact and leadership.</li>
-          <li class="skills-secondary">Skills: Java, JavaScript, HTML, CSS, Guice, Closure.</li>
+          {% if showSecondarySkillsInExp %}
+            <li>Skills: Java, JavaScript, HTML, CSS, Guice, Closure.</li>
+          {% endif %}
         </ul>
       </article>
 
@@ -129,7 +135,9 @@
         <ul>
           <li>Completed Mission Control program in CRM Data Warehouse SRE, implemented automation scripts. Designed and started implementation of Batch Monitoring tool.</li>
           <li>Led UI implementation for several features in multiple Internal Sales Engineering applications. Implemented UI redesign, backend ETL, Bigtable abstraction layer.</li>
-          <li class="skills-secondary">Skills: Java, JavaScript, HTML, CSS, GWT, Python, Bigtable.</li>
+          {% if showSecondarySkillsInExp %}
+            <li>Skills: Java, JavaScript, HTML, CSS, GWT, Python, Bigtable.</li>
+          {% endif %}
         </ul>
       </article>
 
@@ -204,29 +212,33 @@
       </article>
     </section>
 
-    <section>
-      <article>
-        <h2>Community, Awards, Hiring</h2>
-        <ul>
-          <li>Volunteered for animal shelter website and local non-profits via Google Serve.</li>
-          <li>Conducted 40 technical interviews at Google. Hosted 2 interns, 1 converted to full-time. Mentored 9 interns.</li>
-          <li>Organized team events, off-sites, celebrations. Co-founded internal Coffee Club.</li>
-          <li>Received 20 peer bonuses and 23 spot bonuses.</li>
-        </ul>
-      </article>
-    </section>
+    {% if showCommunitySection %}
+      <section>
+        <article>
+          <h2>Community, Awards, Hiring</h2>
+          <ul>
+            <li>Volunteered for animal shelter website and local non-profits via Google Serve.</li>
+            <li>Conducted 40 technical interviews at Google. Hosted 2 interns, 1 converted to full-time. Mentored 9 interns.</li>
+            <li>Organized team events, off-sites, celebrations. Co-founded internal Coffee Club.</li>
+            <li>Received 20 peer bonuses and 23 spot bonuses.</li>
+          </ul>
+        </article>
+      </section>
+    {% endif %}
 
-    <section>
-      <article>
-        <h2>Personal</h2>
-        <ul>
-          <li>Nationality: German and Swiss.</li>
-          <li>Languages: German (fluent, native), English (fluent, 16+ years professional use).</li>
-          <li>Hobbies: Snowboarding, Mountain Biking, HIIT, cooking, coffee, home automation.</li>
-          <li>Married and two daughters (ages 0 and 4).</li>
-        </ul>
-      </article>
-    </section>
+    {% if showPersonalSection %}
+      <section>
+        <article>
+          <h2>Personal</h2>
+          <ul>
+            <li>Nationality: German and Swiss.</li>
+            <li>Languages: German (fluent, native), English (fluent, 16+ years professional use).</li>
+            <li>Hobbies: Snowboarding, Mountain Biking, HIIT, cooking, coffee, home automation.</li>
+            <li>Married and two daughters (ages 0 and 4).</li>
+          </ul>
+        </article>
+      </section>
+    {% endif %}
   </main>
 </body>
 
