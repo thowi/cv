@@ -4,7 +4,7 @@
   "description": "CV, implemented in Express.js, Handlebars, HTML and CSS.",
   "main": "app.js",
   "watch": {
-    "pdf": {
+    "pdf-prince": {
       "patterns": [
         "."
       ],
@@ -13,10 +13,12 @@
     }
   },
   "scripts": {
-    "start": "node app.js",
     "dev": "nodemon app.js",
-    "watch": "npm-watch",
-    "pdf": "prince cv.html"
+    "pdf-prince": "prince 'http://localhost:3000/cv?variant=basic' -o cv_prince.pdf",
+    "pdf-weasy": "weasyprint 'http://localhost:3000/cv?variant=basic' cv_weasy.pdf",
+    "pdf-wk": "wkhtmltopdf 'http://localhost:3000/cv?variant=basic' cv_wk.pdf",
+    "start": "node app.js",
+    "watch": "npm-watch"
   },
   "author": "Thomas Wittek",
   "devDependencies": {
