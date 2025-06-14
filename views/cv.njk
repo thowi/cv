@@ -11,7 +11,7 @@
 <body class="{{ variant | replace('[^\\w]', '-', 'g') }}">
 
   <header>
-    {% if variant != 'no-photo' %}
+    {% if variant in ['bubble', 'polaroid'] %}
       <div class="portrait">
         {% if variant == 'polaroid' %}
           <img class="portrait polaroid" src="portrait_polaroid.svg" alt="Profile photo">
@@ -27,10 +27,18 @@
       <h2>Software Engineer, Tech Lead, Manager</h2>
     </div>
     <ul class="contact">
-      <li><a href="http://linkedin.com/in/thowit" class="linkedin">linkedin.com/in/thowit<span class="icon icon-linkedin"></span></a></li>
-      <li><a href="mailto:thomas@wittek.me">thomas@wittek.me<span class="icon material-symbols-outlined">alternate_email</span></a></li>
-      <li><a href="tel:+41787122257">+41 78 71 222 57<span class="icon material-symbols-outlined">call</span></a></li>
-      <li><a href="https://maps.app.goo.gl/uWhuVx6parFiDAWZ7">Zurich, CH<span class="icon material-symbols-outlined">location_on</span></a></li>
+      {% if variant == 'basic' %}
+        {# Different order of items for the basic layout. No icons. No links. #}
+        <li>thomas@wittek.me</li>
+        <li>+41 78 7122257</li>
+        <li>linkedin.com/in/thowit</li>
+        <li>Zurich, Switzerland</li>
+      {% else %}
+        <li><a href="http://linkedin.com/in/thowit" class="linkedin">linkedin.com/in/thowit<span class="icon icon-linkedin"></span></a></li>
+        <li><a href="mailto:thomas@wittek.me">thomas@wittek.me<span class="icon material-symbols-outlined">alternate_email</span></a></li>
+        <li><a href="tel:+41787122257">+41 78 7122257<span class="icon material-symbols-outlined">call</span></a></li>
+        <li><a href="https://maps.app.goo.gl/uWhuVx6parFiDAWZ7">Zurich, CH<span class="icon material-symbols-outlined">location_on</span></a></li>
+      {% endif %}
     </ul>
   </header>
 

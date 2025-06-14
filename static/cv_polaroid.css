@@ -1,20 +1,24 @@
-body.polaroid header {
+header .title {
+  margin: 0 16pt;
+}
+
+header {
   margin-bottom: 40pt;
   padding-left: 100pt;
 }
 
-body.polaroid header img.portrait.polaroid {
+header img.portrait.polaroid {
   left: -20pt;
   position: absolute;
   top: -45pt;
   width: 120pt;
 }
 
-body.polaroid header .frame {
+header .frame {
   display: none;
 }
 
-body.polaroid header .title {
+header .title {
   margin-left: 16pt;
   text-align: center;
 }
@@ -28,7 +32,7 @@ body.polaroid header .title {
     background-size: 28%;
   }
 
-  body.polaroid header img {
+  header img {
     display: none;
   }
 }

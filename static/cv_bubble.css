@@ -1,20 +1,24 @@
-body.bubble header .frame {
+header .title {
+  margin: 0 16pt;
+}
+
+header .frame {
   border-radius: 50%;
   overflow: hidden;
   width: 64pt;
 }
 
-body.bubble header img.portrait.bubble {
+header img.portrait.bubble {
   object-fit: cover;
   transform: scale(1.2) translateX(1pt);
   width: 100%;
 }
 
-body.bubble header img.portrait.polaroid {
+header img.portrait.polaroid {
   display: none;
 }
 
-body.bubble header .clip {
+header .clip {
   border-radius: 50%;
   height: 64pt;
   overflow: hidden;

@@ -1,0 +1,23 @@
+header {
+  flex-wrap: wrap;
+}
+
+.contact {
+  display: flex;
+  margin-top: 4pt;
+  width: 100%;
+}
+
+.contact li {
+  color: var(--accent);
+  margin-right: 4pt;
+}
+
+.contact li:not(:last-child)::after {
+  content: '|';
+  margin-left: 4pt;
+}
+
+.contact .icon {
+  display: none;
+}
