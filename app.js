@@ -28,6 +28,10 @@ app.get('/cv', (req, res) => {
   });
 });
 
+app.get('/cv_form', (req, res) => {
+  res.render('cv_form');
+});
+
 // Start server.
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

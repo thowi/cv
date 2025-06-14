@@ -35,9 +35,11 @@
   </header>
 
   <main>
-    <section>
-      <p>{{ summary or 'Passionate Software Engineer with a strong focus on product impact, quality, and team effectiveness. Proven track record of leading ambitious full-stack projects at scale, driving launches on major user-facing platforms, and managing high-performing teams.' }}</p>
-    </section>
+    {% if summary %}
+      <section>
+        <p>{{ summary }}</p>
+      </section>
+    {% endif %}
 
     <section>
       <h2>Skills</h2>

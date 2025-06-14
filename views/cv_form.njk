@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CV customizer</title>
+    <link rel="stylesheet" href="cv_form.css">
+  </head>
+  <body>
+    <form method="get" action="cv">
+      <label for="summary">Summary:</label>
+      <textarea name="summary" id="summary">Passionate Software Engineer with a strong focus on product impact, quality, and team effectiveness. Proven track record of leading ambitious full-stack projects at scale, driving launches on major user-facing platforms, and managing high-performing teams.</textarea>
+
+      <label for="variant">Variant:</label>
+      <select name="variant" id="variant">
+        <option value="polaroid">Polaroid photo</option>
+        <option value="bubble">Bubble photo</option>
+        <option value="no-photo">No photo</option>
+      </select>
+
+      <fieldset>
+        <legend>Content to show:</legend>
+        <div class="checkbox-row">
+          <label for="showPrimarySkillsInExp">Show primary skills</label>
+          <input name="showPrimarySkillsInExp" id="showPrimarySkillsInExp" type="checkbox" value="1" checked>
+        </div>
+
+        <div class="checkbox-row">
+          <label for="showSecondarySkillsInExp">Show secondary skills</label>
+          <input name="showSecondarySkillsInExp" id="showSecondarySkillsInExp" type="checkbox" value="1" checked>
+        </div>
+
+        <div class="checkbox-row">
+          <label for="showCommunitySection">Show Community section</label>
+          <input name="showCommunitySection" id="showCommunitySection" type="checkbox" value="1" checked>
+        </div>
+
+        <div class="checkbox-row">
+          <label for="showPersonalSection">Show Personal section</label>
+          <input name="showPersonalSection" id="showPersonalSection" type="checkbox" value="1" checked>
+        </div>
+      </fieldset>
+
+      <button type="submit">Generate CV</button>
+    </form>
+  </body>
+</html>
