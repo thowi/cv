@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="cv.css">
   <link rel="stylesheet" href="cv_{{ variant | replace('[^\\w]', '_', 'g') }}.css">
-  <title>Thomas Wittek – Senior Software Engineer and Tech Lead</title>
+  <title>Thomas Wittek – {{ title }}</title>
 </head>
 
 <body class="{{ variant | replace('[^\\w]', '-', 'g') }}">
@@ -24,7 +24,7 @@
     {% endif %}
     <div class="title">
       <h1><span class="first-name">Thomas</span> <span class="last-name">Wittek</span></h1>
-      <h2>Software Engineer and Tech Lead</h2>
+      <h2>{{ title }}</h2>
     </div>
     <ul class="contact">
       {% if variant == 'basic' %}

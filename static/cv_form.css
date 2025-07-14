@@ -23,6 +23,10 @@ form > label {
   display: block;
 }
 
+input[type="text"] {
+  width: 400px;
+}
+
 .checkbox-row {
   display: flex;
   flex-direction: row-reverse;
