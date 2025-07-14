@@ -18,8 +18,10 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 // Routes.
 app.get('/cv', (req, res) => {
+  const summaryHtml =
+      '<p>' + req.query.summary.split('\n').join('</p>\n<p>') + '</p>';
   res.render('cv', {
-    summary: req.query.summary,
+    summaryHtml: summaryHtml,
     variant: req.query.variant ?? 'polaroid',
     showPrimarySkillsInExp: req.query.showPrimarySkillsInExp || false,
     showSecondarySkillsInExp: req.query.showSecondarySkillsInExp || false,

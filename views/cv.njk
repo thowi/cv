@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="cv.css">
   <link rel="stylesheet" href="cv_{{ variant | replace('[^\\w]', '_', 'g') }}.css">
-  <title>Thomas Wittek – Senior Software Engineer, Tech Lead, Manager</title>
+  <title>Thomas Wittek – Senior Software Engineer and Tech Lead</title>
 </head>
 
 <body class="{{ variant | replace('[^\\w]', '-', 'g') }}">
@@ -24,7 +24,7 @@
     {% endif %}
     <div class="title">
       <h1><span class="first-name">Thomas</span> <span class="last-name">Wittek</span></h1>
-      <h2>Software Engineer, Tech Lead, Manager</h2>
+      <h2>Software Engineer and Tech Lead</h2>
     </div>
     <ul class="contact">
       {% if variant == 'basic' %}
@@ -43,9 +43,9 @@
   </header>
 
   <main>
-    {% if summary %}
+    {% if summaryHtml %}
       <section>
-        <p>{{ summary }}</p>
+        {{ summaryHtml | safe }}
       </section>
     {% endif %}
 
@@ -53,10 +53,10 @@
       <h2>Skills</h2>
       <ul>
         <li><strong>Programming:</strong> Software Architecture and Design. Java, Python, JavaScript, TypeScript, C++, Perl, Bash, HTML, CSS, SCSS, JSON, XML, Protobuf. CI/CD, DevOps, Git, Perforce.<br>Contributed to some of the largest code bases in the world (e.g. Google Search, Maps).</li>
-        <li><strong>Stacks/frameworks:</strong> Google Web Server FE, Superroot middleware, Android, Dagger, Guice, Google Apps Framework, REST APIs, Spring Boot, Node.js, Express.js, Flask, Google Closure, WebDriver, Selenium, Linux.</li>
+        <li><strong>Stacks/frameworks:</strong> Google Web Server FE, Superroot middleware, Android, Dagger/Guice Dependency Injection, Google Apps Framework (~Spring), REST APIs, Spring Boot, Node.js, Express.js, Flask, Google Closure/Wiz (~React), WebDriver, Selenium, Linux.</li>
         <li><strong>Machine Learning:</strong> Model training, Jupyter, Colab, Scikit-learn, Pandas, NumPy, TensorFlow, PyTorch.</li>
         <li><strong>Data:</strong> SQL, MySQL, GoogleSQL, SQLite, MongoDB, BigQuery, Bigtable, Google Data Studio.</li>
-        <li><strong>Leadership:</strong> Managed team of 4, coached and directed them toward multiple launches on Search. Tech Lead for up to 8 engineers. Built processes, guidelines, community, roadmaps, Agile iteration plans, retrospectives. Cross-functional, cross-team, cross-timezone collaboration.</li>
+        <li><strong>Leadership:</strong> Tech Lead for up to 8 engineers. Roadmap planning, Agile team leadership. Cross-functional, cross-team, cross-timezone collaboration. People management, coaching, hiring.</li>
       </ul>
     </section>
 
@@ -70,7 +70,7 @@
       <ul>
         <li>Earned Certificate of Advanced Studies in Data & Machine Learning at ETH Zurich. (see Education)</li>
         <li>Completed series of courses in TypeScript, Node.js, Express.js, MongoDB, and more. (see Certifications)</li>
-        <li>Spending time with family and caring for our newborn daughter.</li>
+        <li>Training Biological Neural Networks at home (two daughters).</li>
       </ul>
 
       <h3 class="position">
@@ -157,7 +157,7 @@
         <span class="date"><time datetime="1999">1999</time> – <time datetime="2005">2005</time></span>
       </h3>
       <p class="organization">
-        <span class="name">Freelancee</span>
+        <span class="name">Freelance</span>
         <span class="location">Cologne, Germany</span>
       </p>
       <ul>
