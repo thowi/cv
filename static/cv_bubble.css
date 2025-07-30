@@ -10,7 +10,7 @@ header .frame {
 
 header img.portrait.bubble {
   object-fit: cover;
-  transform: scale(1.2) translateX(1pt);
+  transform: scale(1.2) translateY(3pt);
   width: 100%;
 }
 
