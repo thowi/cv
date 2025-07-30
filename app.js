@@ -18,8 +18,9 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 // Routes.
 app.get('/cv', (req, res) => {
-  const summaryHtml =
-      '<p>' + req.query.summary.split('\n').join('</p>\n<p>') + '</p>';
+  const summaryHtml = req.query.summary
+      ? '<p>' + req.query.summary.split('\n').join('</p>\n<p>') + '</p>'
+      : null;
   res.render('cv', {
     title: req.query.title,
     summaryHtml: summaryHtml,
