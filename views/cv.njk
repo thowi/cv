@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="cv.css">
-  <link rel="stylesheet" href="cv_{{ variant | replace('[^\\w]', '_', 'g') }}.css">
+  <link rel="stylesheet" href="cv_{{ variant | replace(r/[^\w]/g, '_') }}.css">
   <title>Thomas Wittek – {{ title }}</title>
 </head>
 
-<body class="{{ variant | replace('[^\\w]', '-', 'g') }}">
+<body class="{{ variant | replace(r/[^\w]/g, '-') }}">
 
   <header>
-    {% if variant in ['bubble', 'polaroid'] %}
+    {% if variant in ['bubble', 'bubble-short', 'polaroid', 'polaroid-short'] %}
       <div class="portrait">
-        {% if variant == 'polaroid' %}
+        {% if variant in ['polaroid', 'polaroid-short'] %}
           <img class="portrait polaroid" src="portrait_polaroid.svg" alt="Profile photo">
-        {% elif variant == 'bubble' %}
+        {% elif variant in ['bubble', 'bubble-short'] %}
           <div class="frame">
             <img class="portrait bubble" src="portrait.jpg" alt="Profile photo">
           </div>

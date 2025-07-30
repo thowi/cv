@@ -1,0 +1,19 @@
+@import "cv_polaroid.css";
+
+header {
+  margin-bottom: 12pt;
+}
+
+header img.portrait.polaroid {
+  top: -40pt;
+  width: 92pt;
+}
+
+@media print {
+  /* Full-bleed print header. */
+  @page:first {
+    background-position-x: calc(50% - 210pt);
+    background-position-y: -58pt;
+    background-size: 23%;
+  }
+}
